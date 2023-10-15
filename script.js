@@ -34,7 +34,9 @@ const lookup = {
 function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
   // Only change code below this line
-
+ return encodedStr.replace(/[A-Z]/g, function(char) {
+    return String.fromCharCode(((char.charCodeAt(0) - 65 + 13) % 26) + 65);
+  });
   return; //return decodedArr
 }
 
